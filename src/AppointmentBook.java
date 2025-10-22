@@ -1,3 +1,4 @@
+
 public class AppointmentBook {
     private boolean[][] schedule;
 
