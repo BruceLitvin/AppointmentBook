@@ -16,10 +16,12 @@ public class Main {
         for (int i = 44; i < 60; i++) schedule[3][i] = true;
         try {
             a.printPeriod(2);
-        } catch (ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("You inserted a bad number you noob");
         }
-        AppointmentBook b = new AppointmentBook(schedule);
+
+
+       AppointmentBook b = new AppointmentBook(schedule);
         int period=2;
         while(period<5)
         {
