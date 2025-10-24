@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         boolean[][] schedule = new boolean[8][60];
         AppointmentBook a = new AppointmentBook(schedule);
         for (int i = 10; i < 15; i++) schedule[1][i] = true;
@@ -14,12 +14,6 @@ public class Main {
         for (int i = 41; i < 60; i++) schedule[2][i] = true;
         for (int i = 5; i < 30; i++) schedule[3][i] = true;
         for (int i = 44; i < 60; i++) schedule[3][i] = true;
-        try {
-            a.printPeriod(2);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("You inserted a bad number you noob");
-        }
-
 
        AppointmentBook b = new AppointmentBook(schedule);
         int period=2;
@@ -33,5 +27,13 @@ public class Main {
         System.out.println(b.makeAppointment(2,4,22));
         b.printPeriod(4);
     }
+public static int read() throws FileNotFoundException{
+        int request=0;
+        AppointmentBook[] schedule = new AppointmentBook[1000];
+        File f= new File("Schedules.txt");
+        Scanner s = new Scanner(f);
+        int index=0;
+return 0;
 
+}
 }
