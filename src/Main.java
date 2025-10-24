@@ -1,11 +1,9 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     public static void main(String[] args) {
         boolean[][] schedule = new boolean[8][60];
         AppointmentBook a = new AppointmentBook(schedule);
-        a.printPeriod(2);
         schedule= new boolean[8][60];
 
         for (int i = 10; i < 15; i++) schedule[1][i] = true;
@@ -23,6 +21,7 @@ public class Main {
             b.printPeriod(period);
             period++;
         }
+
         a.findFreeBlock(2,15);
         a.findFreeBlock(2,9);
         a.findFreeBlock(2,20);
