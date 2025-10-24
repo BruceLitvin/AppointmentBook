@@ -11,11 +11,7 @@ public class Main {
         for (int i = 41; i < 60; i++) schedule[2][i] = true;
         for (int i = 5; i < 30; i++) schedule[3][i] = true;
         for (int i = 44; i < 60; i++) schedule[3][i] = true;
-        try {
-            a.printPeriod(2);
-        } catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("You inserted a bad number you noob");
-        }
+
         AppointmentBook b = new AppointmentBook(schedule);
         int period=2;
         while(period<5)
@@ -27,6 +23,13 @@ public class Main {
         b.printPeriod(4);
         System.out.println(b.makeAppointment(2,4,22));
         b.printPeriod(4);
+        System.out.println(b.makeAppointment(2,4,22));
+        b.printPeriod(4);
+        System.out.println(b.makeAppointment(2,4,22));
+        b.printPeriod(4);
+        a.findFreeBlock(2,15);
+        a.findFreeBlock(2,9);
+        a.findFreeBlock(2,20);
     }
 
 }

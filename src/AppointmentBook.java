@@ -20,15 +20,15 @@ public class AppointmentBook {
                         return i-duration+1;
                    else block=0;
                 }
-            return-1;
+
             }
-        return 0;
+        return -1;
     }
 
     public boolean makeAppointment(int startPeriod, int endPeriod, int duration) {
-        int freeBlock = 0;
+
         for (int i = startPeriod; i <= endPeriod; i++) {
-            freeBlock = findFreeBlock(i, duration);
+            int freeBlock = findFreeBlock(i, duration);
             if (freeBlock > -1) {
                 reserveBlock(i, freeBlock, duration);
                 return true;
