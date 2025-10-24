@@ -5,17 +5,16 @@ public class Main {
     public static void main(String[] args) {
         boolean[][] schedule = new boolean[8][60];
         AppointmentBook a = new AppointmentBook(schedule);
+        a.printPeriod(2);
+        schedule= new boolean[8][60];
+
         for (int i = 10; i < 15; i++) schedule[1][i] = true;
         for (int i = 25; i < 30; i++) schedule[1][i] = true;
         for (int i = 0; i < 15; i++) schedule[2][i] = true;
         for (int i = 41; i < 60; i++) schedule[2][i] = true;
         for (int i = 5; i < 30; i++) schedule[3][i] = true;
         for (int i = 44; i < 60; i++) schedule[3][i] = true;
-        try {
-            a.printPeriod(2);
-        } catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("You inserted a bad number you noob");
-        }
+
         AppointmentBook b = new AppointmentBook(schedule);
         int period=2;
         while(period<5)
@@ -24,8 +23,15 @@ public class Main {
             b.printPeriod(period);
             period++;
         }
+        a.findFreeBlock(2,15);
+        a.findFreeBlock(2,9);
+        a.findFreeBlock(2,20);
         b.printPeriod(4);
         System.out.println(b.makeAppointment(2,4,22));
+        b.printPeriod(4);
+        System.out.println(b.makeAppointment(3,4,3));
+        b.printPeriod(4);
+        System.out.println(b.makeAppointment(2,4,30));
         b.printPeriod(4);
     }
 
