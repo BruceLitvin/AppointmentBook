@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class AppointmentBook {
     private boolean[][] schedule;
 
@@ -50,4 +52,5 @@ public class AppointmentBook {
             schedule[period-1][i]=false;
 
     }
+
 }
