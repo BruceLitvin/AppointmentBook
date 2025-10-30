@@ -2,6 +2,7 @@ import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -22,6 +23,7 @@ public class Main {
         return schedule;
 
     }
+
     public static int read() throws FileNotFoundException {
         int meetings = 0;
         File f = new File("Schedules.txt");
@@ -30,17 +32,16 @@ public class Main {
         while (s.hasNext()) {
             while (s.hasNextBoolean()) {
                 schedule += s.nextBoolean() + " ";
-                AppointmentBook a = new AppointmentBook(readSchedule(schedule));
-                schedule = "";
-                if (a.makeAppointment(s.nextInt(), s.nextInt(), s.nextInt()))
-                    meetings++;
             }
-
+            AppointmentBook a = new AppointmentBook(readSchedule(schedule));
+            schedule = "";
+            if (a.makeAppointment(s.nextInt(), s.nextInt(), s.nextInt()))
+                meetings++;
         }
+        return meetings;
+    }
 
-                return meetings;
-    }
-    }
+}
 
 
 
