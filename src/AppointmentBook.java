@@ -15,15 +15,11 @@ public class AppointmentBook {
         int block = 0;
         for (int i = 0; i < 60; i++)
             if (isMinuteFree(period, i)) {
-                {
                     block++;
                     if (block == duration)
-
                         return i - duration + 1;
-                    else block = 0;
-                }
-
             }
+            else block = 0;
         return -1;
     }
 
